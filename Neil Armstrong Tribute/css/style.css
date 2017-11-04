@@ -1,0 +1,61 @@
+body{
+  color:white
+}
+#photo-container{
+  height:490px;
+  width: 960px;
+  background-color: rgb(200, 200, 200);
+  position: relative;
+  margin: auto;
+}
+#neil-img{
+  height:360px;
+  text-align: center;
+}
+#timeline{
+  width: 960px;
+  background-color: rgb(200, 200, 200);
+  position: relative;
+  margin: auto;
+}
+h2{
+  padding-left: 30px;
+}
+#timeline-text{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+article p{
+  font-family: Alike;
+  font-size: 20px;
+}
+
+article h5{
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+article h1{
+  font-family: "Oswald", sans-serif;
+}
+
+.blockquote{
+  font-style: italic;
+  size: 120%;
+  color: #4d4d4f;
+}
+
+#Wiki-link{
+  text-align: center;
+}
+
+#timeline{
+  color: #1f2023;
+}
+
+h1{
+  color: #1f2023
+}
+
+
+
