@@ -1,0 +1,227 @@
+
+.nav-pills{
+  font-family: 'Noto Sans', sans-serif;
+  font-size:1.2em;
+  background-color:#254372;
+}
+.nav-pills li a{
+  color:white;
+}
+.nav-pills li a:hover{
+  color:black;
+}
+.navbar{
+	min-height:42px !important;
+	margin-bottom:0 !important;
+}
+.wrapper .lotoNmb{
+	margin-top: 20px;
+}
+
+.wrapper .lotoNmb p{
+	margin-top: 10px;
+}
+	
+
+.lotoNmb input{
+	width:28px;
+	margin:15px 5px 15px 5px;
+	padding: 0 3px 0 3px;
+	background-color:white;
+}
+
+.wrapper #extracted{
+	width: 300px;
+	height: 50px;
+	padding: 10px 0 10px 0;
+	border:1px solid;
+	text-align:center;
+	background-color:white;
+	font-size: 20px;
+	margin:auto;
+}
+
+
+canvas{
+	height:301px;
+	width: 301px;
+	border:1px solid;
+	background-color:white;
+	margin: 10px 0 5px 0;
+}
+
+
+.wrapper h2, .columns h2{
+	padding: 20px 0 15px 0;
+}
+
+.tableDiv{
+	width:500px;
+	height:300px;
+	margin: auto;
+	border: 1px solid;
+}
+
+.wrapper #index{
+	width:35px;
+	margin:15px 5px 15px 5px;
+}
+
+
+.wrapper section{
+	width: 100%;
+	height:500px;
+	text-align:center;
+	border:1px solid;
+	background-color:#f9f9f9;
+}
+
+/* columns style */
+
+.columns {
+    overflow: auto;
+}
+
+.columns .section{
+	height: 93.7vh;
+	float: left;
+    width: 25%;
+	border:1px solid;
+	text-align:center;
+	background-color:#f9f9f9;
+}
+
+.columns #sec4{
+	height: 93.7vh;
+	float:right;
+	width: 25%;
+	border:1px solid;
+	text-align:center;
+	background-color:#f9f9f9;
+}
+
+.columns .lotoNmb{
+	margin-top: 20px;
+}
+
+.columns .lotoNmb p{
+	margin-top: 10px;
+}
+	
+.columns .lotoNmb input{
+	width:28px;
+	margin:15px 5px 15px 5px;
+	padding: 0 3px 0 3px;
+	background-color:white;
+}
+
+.columns #extracted{
+	width: 300px;
+	height: 50px;
+	padding: 10px 0 10px 0;
+	border:1px solid;
+	text-align:center;
+	font-size: 20px;
+	margin:auto;
+	background-color:white;
+}
+
+.columns .tableDiv{
+	width:300px;
+	height:300px;
+	margin: auto;
+	border: 1px solid;
+}
+
+.columns #index{
+	width:35px;
+	margin:15px 5px 15px 5px;
+}
+
+/* cubicle layout*/
+
+.cubicle {
+    overflow: auto;
+}
+
+.cubicle #sec1, .cubicle #sec3{
+	height: 460px;
+	float: left;
+    width: 50%;
+	border:1px solid;
+	text-align:center;
+	background-color:#f9f9f9;
+}
+
+.cubicle #sec2,.cubicle #sec4{
+	height: 460px;
+	float:right;
+	width: 50%;
+	border:1px solid;
+	text-align:center;
+	background-color:#f9f9f9;
+}
+.cubicle h2{
+	padding: 5px 0 5px 0;
+}
+.cubicle .lotoNmb{
+	margin-top: 20px;
+}
+
+.cubicle .lotoNmb p{
+	margin-top: 10px;
+}
+	
+.cubicle .lotoNmb input{
+	width:28px;
+	margin:15px 5px 15px 5px;
+	padding: 0 3px 0 3px;
+	background-color:white;
+}
+
+.cubicle #extracted{
+	width: 300px;
+	height: 50px;
+	padding: 10px 0 10px 0;
+	border:1px solid;
+	text-align:center;
+	background-color:white;
+	font-size: 20px;
+	margin:auto;
+}
+
+.cubicle .tableDiv{
+	width:500px;
+	height:300px;
+	margin: auto;
+	border: 1px solid;
+}
+
+.cubicle #index{
+	width:35px;
+	margin:10px 5px 10px 5px;
+}
+
+.layoutSelector{
+	float: left;
+	width:52px;
+	height: 85px;
+	border: 1px solid;
+	position:fixed;
+	margin-top: 40vh;
+	background-color:#254372; 
+}
+
+.layoutSelector button{
+	width:50px;
+	padding: 3px 0 3px 0;
+	background-color:#254372; 
+	color: white;
+}
+.layoutSelector button:hover{
+	background-color:#4c91ff !important;
+}
+
+
+	
+	

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge"> <!-- † -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>TI lab 8</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	</head>
+	<body onload="setInterval(showDate, 1000); showInfo(); getLocation()">
+	<header>
+		<nav class="navbar">
+		  <ul class="nav nav-pills navbar-fixed-top">
+			
+			<li class="pull-right">
+			  <a href="#sec4">Secțiunea4</a>  
+			 </li> 
+			
+			<li class="pull-right">
+			  <a href="#sec3">Secțiunea3</a>
+			</li>
+			
+			 <li class="pull-right">
+			  <a href="#sec2">Secțiunea2</a>
+		   </li> 
+			
+			<li class="pull-right">
+			  <a href="#sec1">Secțiunea1</a>     
+			</li>
+		  </ul>
+  </nav>
+	</header>
+	<aside class ="layoutSelector">
+		<button id="colLay" class="btn" onclick="columnsLayout()">cols</button>
+		<button id="cubLay" class="btn" onclick="cubicleLayout()">cubic</button>
+		<button id="rowLay" class="btn" onclick="rowsLayout()">rows</button>
+	</aside>
+	<div id="wrapper" class="wrapper">
+	<div class="first2Sections">
+		<section class="section" id="sec1">
+			<h2>Informații generale</h2>
+			<p id="data"></p>
+			<p id="url"></p>
+			<p id="browser"></p>
+			<p id="version"></p>
+			<p id="os"></p>
+			<p id="loc"></p>
+		</section>
+		
+		<section class="section"  id="sec2">
+			<h2>Internet Loto</h2>
+			<div class="lotoNmb">
+				<div id="extracted"></div>
+					<input class="lotoIn" type="text">
+					<input class="lotoIn" type="text">
+					<input class="lotoIn" type="text">
+					<input class="lotoIn" type="text">
+					<input class="lotoIn" type="text">
+					<input class="lotoIn" type="text">
+					<input class="lotoIn" type="text">
+					<input class="lotoIn" type="text">
+					<br>
+				<button class="btn btn-primary" id="btnExtr" onclick="getLoto()">Extrage</button>
+				<p id="bingo"></p>
+			</div>
+		</section>
+		</div>
+		<div class="last2Sections">
+		<section class="section"  id="sec3">
+			<h2>Canvas</h2>
+			<div class = "myCanvas">
+					<div class="colors">
+					Culoare contur: <input id="stroke" type="color">
+					Culoare umplere: <input id="fill" type="color">
+				</div>
+				<div>
+					<canvas id="canvas">
+					</canvas>
+				</div>
+				<button class="btn btn-primary" onclick="clearCanvas()">Curăță suprafața</button>
+			</div>
+		</section>
+		
+		<section class="sectionLast"  id="sec4">
+			<h2>Tabel dinamic</h2>
+			<div class="tableDiv">
+				<table id="myTable" class="table table-bordered">
+					<tbody>
+				<!--<tr id="tr">
+					<td id="td">1</td>
+					<td id="td">2</td>
+				</tr>-->
+					<tbody>
+				</table>
+			</div>
+			Index: <input type="number" id="index" value="1"> 
+			<input id="cellColor" type="color">
+			<div class="insertButtons">
+				<button class="btn btn-primary"	onclick="insertCol()">Adaugă coloană</button>
+				<button class="btn btn-primary" onclick="insertRow()">Adaugă linie</button>
+			</div>
+		</section>
+		</div>
+	</div>
+	<script src="js/loc.js"></script>
+	<script src="js/myscript.js"></script>
+	<script src="js/loto.js"></script>
+	<script src="js/canvas.js"></script>
+	<script src="js/table.js"></script>
+	<script src="js/layout.js"></script>
+	</body>
+</html>
