@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca> 
+   <carte> 
+		<id>#1234</id>
+       <titlu>Moromeții</titlu> 
+       <autor>Marin Preda</autor> 
+       <anAparitie>1955</anAparitie> 
+    </carte> 
+   <carte> 
+		<id>#1235</id>
+       <titlu>Moara cu noroc</titlu> 
+       <autor>Ioan Slavici</autor> 
+       <anAparitie>1881</anAparitie> 
+    </carte> 
+   <carte> 
+		<id>#1236</id>
+       <titlu>Ion</titlu> 
+       <autor>Liviu Rebreanu</autor> 
+       <anAparitie>1920</anAparitie> 
+    </carte> 
+   <carte> 
+		<id>#1237</id>
+       <titlu>Ultima noapte de dragoste, întâia noapte de război</titlu> 
+       <autor>Camil Petrescu</autor> 
+       <anAparitie>1930</anAparitie> 
+    </carte> 
+     <carte> 
+		<id>#1238</id>
+       <titlu>Moromeții</titlu> 
+       <autor>Marin Preda</autor> 
+       <anAparitie>1955</anAparitie> 
+    </carte> 
+   <carte> 
+		<id>#1239</id>
+       <titlu>Moara cu noroc</titlu> 
+       <autor>Ioan Slavici</autor> 
+       <anAparitie>1881</anAparitie> 
+    </carte> 
+   <carte> 
+		<id>#1240</id>
+       <titlu>Ion</titlu> 
+       <autor>Liviu Rebreanu</autor> 
+       <anAparitie>1920</anAparitie> 
+    </carte> 
+   <carte> 
+		<id>#1241</id>
+       <titlu>Ceva</titlu> 
+       <autor>Camil Ceva</autor> 
+       <anAparitie>1932</anAparitie> 
+    </carte> 
+     <carte> 
+		<id>#1242</id>
+       <titlu>Nimic</titlu> 
+       <autor>Anonimus Nenumescovici</autor> 
+       <anAparitie>1955</anAparitie> 
+    </carte> 
+   <carte> 
+		<id>#1243</id>
+       <titlu>Alta carte</titlu> 
+       <autor>Ala Bala</autor> 
+       <anAparitie>1843</anAparitie> 
+    </carte> 
+   <carte> 
+		<id>#1244</id>
+       <titlu>Ana</titlu> 
+       <autor>Are Mere</autor> 
+       <anAparitie>1920</anAparitie> 
+    </carte> 
+</biblioteca>
