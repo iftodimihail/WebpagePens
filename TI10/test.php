@@ -31,6 +31,7 @@
 		function verify(){
 			$contor = 0;
 			$ans1 = $ans2= $ans3 = $ans4 = $ans5 ="";
+			$ans = array();
 			$test = array(
 			array("1)Ce culoare are mașina roșie?","roșu"),
 			array("2)2+2*2-2=?",4),
@@ -39,31 +40,15 @@
 			array("5.Daca mâine e marți, ce zi va fi în 4 zile?","vineri")
 			);
 			
-			if(isset($_POST['answer1'])){
-				$ans1 = test_input($_POST['answer1']);
-				if($ans1==$test[0][1])
-					$contor++;
+			$noQuestions = sizeof($test,0);
+			for($i=1;$i<=$noQuestions; $i++){
+				if(isset($_POST['answer'.$i])){
+					$ans[$i-1] = test_input($_POST['answer'.$i]);
+					if($ans[$i-1]==$test[$i-1][1])
+						$contor++;
+				}
 			}
-			if(isset($_POST['answer2'])){
-				$ans2 = test_input($_POST['answer2']);
-				if($ans2==$test[1][1])
-					$contor++;
-			}
-			if(isset($_POST['answer3'])){
-				$ans3 = test_input($_POST['answer3']);
-				if($ans3==$test[2][1])
-					$contor++;
-			}
-			if(isset($_POST['answer4'])){
-				$ans4 = test_input($_POST['answer4']);
-				if($ans4==$test[3][1])
-					$contor++;
-			}
-			if(isset($_POST['answer5'])){
-				$ans5 = test_input($_POST['answer5']);
-				if($ans5==$test[4][1])
-					$contor++;
-			}
+			
 			echo "<p>Ați răspuns corect la: ".$contor." din 5 întrebări!</p>";
 			echo "<p>Răspunsurile corecte la toate întrebările:<br> 
 			1)roșu<br> 2)4<br> 3)2<br> 4)portocala<br> 5)vineri";
