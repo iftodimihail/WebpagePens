@@ -4,6 +4,6 @@ Website that includes PHP and runs on Apache23 server
 
 2nd section - gives info about server's ip, port and version and client's ip and port
 
-3rd section(still in work)
+3rd section - multiple choice test 
 
 
