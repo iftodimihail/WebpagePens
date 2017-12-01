@@ -12,5 +12,5 @@ echo "<br>";
 echo $_SERVER['REMOTE_PORT'];
 echo "<br>";
 echo "<h1>Adresa url</h1>";
-echo $_SERVER['HTTP_REFERER'];
+echo $_SERVER['SCRIPT_NAME']."?".$_SERVER['QUERY_STRING']."<br>";
 ?>
