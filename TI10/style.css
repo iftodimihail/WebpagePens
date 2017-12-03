@@ -1,0 +1,38 @@
+html, body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+.nav{
+  font-family: 'Noto Sans', sans-serif;
+  font-size:1em;
+  background-color:#254372;
+  list-style: none;
+  
+}
+.nav li a{
+  color:white;
+  text-decoration: none;
+  padding: 5px 10px 5px 10px !important;
+}
+
+.nav li a:hover{
+  color:black;
+}
+.navbar{
+	min-height:37px !important;
+	margin-bottom:0 !important;
+}
+
+#content{
+	margin-top: 10px;
+	text-align: center;
+}
+.test p{
+	padding: 6px 0 6px 0;
+	margin-bottom: 0;
+}
+
+.test input{
+	margin-bottom: 20px !important;
+}
