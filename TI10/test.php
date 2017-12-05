@@ -1,18 +1,5 @@
 <div class="test">
 <form method="post">
-	<p>1)Ce culoare are mașina roșie?</p>
-	<input type="radio" name="answer1" value="alb" <?php if(isset($_POST['answer1']) && $_POST['answer1'] == "alb") echo "checked";?>>alb
-	<input type="radio" name="answer1" value="negru" <?php if(isset($_POST['answer1']) && $_POST['answer1'] == "negru") echo "checked";?>>negru
-	<input type="radio" name="answer1" value="roșu" <?php if(isset($_POST['answer1']) && $_POST['answer1'] == "roșu") echo "checked";?> >roșu
-	<input type="radio" name="answer1" value="verde" <?php if(isset($_POST['answer1']) && $_POST['answer1'] == "verde") echo "checked";?>>verde
-	<p>2)2+2*2-2=?</p>
-	<input type="radio" name="answer2" value="4" <?php if(isset($_POST['answer2']) && $_POST['answer2'] == 4) echo "checked";?>>4
-	<input type="radio" name="answer2" value="6" <?php if(isset($_POST['answer2']) && $_POST['answer2'] == 6) echo "checked";?>>6
-	<input type="radio" name="answer2" value="0" <?php if(isset($_POST['answer2']) && $_POST['answer2'] == 0) echo "checked";?>>0
-	<input type="radio" name="answer2" value="2" <?php if(isset($_POST['answer2']) && $_POST['answer2'] == 2) echo "checked";?>>2
-	<p>3)Dacă Ana are 2 mere, câte mere are Ana?</p>
-	<div class="test">
-<form method="post">
 	<p>1) Ce culoare are mașina roșie?</p>
 	<input type="radio" name="answer1" value="alb" <?php if(isset($_POST['answer1']) && $_POST['answer1'] == "alb") echo "checked";?>>alb
 	<input type="radio" name="answer1" value="negru" <?php if(isset($_POST['answer1']) && $_POST['answer1'] == "negru") echo "checked";?>>negru
@@ -56,14 +43,13 @@
 			for($i=1;$i<=$noQuestions; $i++){
 				if(isset($_POST['answer'.$i])){
 					$ans[$i-1] = test_input($_POST['answer'.$i]);
-					//echo $ans[$i-1];
 					if($ans[$i-1]==$test[$i-1][1])
 						$contor++;
 				}
 			}
 			echo "<p>Ați răspuns corect la: ".$contor." din 5 întrebări!</p>";
 			echo "<p>Răspunsurile corecte la toate întrebările:<br> 
-			1) roșu &nbsp;&nbsp; 2) 4 &nbsp;&nbsp; 3) 2 &nbsp;&nbsp;  4) portocala  &nbsp;&nbsp;  5) vineri";
+			1) roșu &nbsp;&nbsp;2) 4 &nbsp;&nbsp; 3) 2 &nbsp;&nbsp;  4) portocala  &nbsp;&nbsp;  5) vineri";
 		}
 		function test_input($data) {
 			  $data = trim($data);
