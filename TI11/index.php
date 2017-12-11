@@ -5,7 +5,7 @@
 		<meta http-equiv="x-ua-compatible" content="ie=edge"> <!-- † -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>TI 11</title>
-		<link rel="stylesheet" type="text/css" href="css/style2.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 	</head>
 	<body onload="getCookie('utilizator')">		
@@ -46,24 +46,26 @@
 					return $bytes;
 				}
 					
-				function getTable(){
+				function setTable(){
 					$cookieName = $_COOKIE['utilizator'];
 					if(isset($cookieName)){
-						if(is_dir($cookieName)){
-							$fileArray = array_slice(scandir($cookieName), 2);
-							echo "<table>";
+						$userDir = "utilizatori/".$cookieName;
+						if(is_dir($userDir)){
+							$fileArray = array_slice(scandir($userDir), 2);
+							echo "<table id='table'>";
 							echo "<tr>";
 							echo "<td>Nume</td> <td>Extensie</td> <td>Dată Modificare</td> <td>Dimensiune</td> <td>Link</td> <td>Șterge</td>";
 							echo "</tr>";
-							foreach($fileArray as $file){
-								$filePath = $cookieName."/".$file;
-								echo "<tr>";
+							foreach($fileArray as $index => $file){
+								$filePath = $userDir."/".$file;
+								$rowId = "fileRow".$index;
+								echo '<tr id="'.$rowId.'">';
 								echo "<td>".(pathinfo($file, PATHINFO_FILENAME))."</td>";
 								echo "<td>".(pathinfo($file, PATHINFO_EXTENSION))."</td>";
 								echo "<td>".(date("d M Y H:i:s", filemtime($filePath)))."</td>";
 								echo "<td>".(formatSizeUnits(filesize($filePath)))."</td>";
 								echo '<td><a href="'.$filePath.'">Link</a></td>';
-								echo "<td><button>Șterge</button></td>";
+								echo '<td><button onclick="deleteFileOnServer(\''.$filePath.'\', '.$rowId.');">Șterge</button></td>';
 								echo "</tr>";
 							}
 							echo "</table>";
@@ -77,16 +79,15 @@
 					}
 				}
 				if(array_key_exists('button',$_POST)){
-					getTable();
+					setTable();
 				}
 			?>
 		</section>
 		<section class="content3">
-			<form  action="" method="post" enctype="multipart/form-data" onsubmit="loadDoc(); return false">
+			<form method="post" enctype="multipart/form-data" onsubmit="event.preventDefault(); addFileOnServer()">
 				Selectează fișiere: <input type="file" name="fileToUpload" id="fileToUpload">
 				<input type="submit" value="Upload" name="submit">
 			</form>
-			<p id="demo"></p>
 		</section>
 		<script src="js/myscript.js"></script>
 	</body>
