@@ -1,0 +1,3 @@
+<?php
+	$_SESSION['cos'] =
+?>
