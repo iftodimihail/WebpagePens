@@ -21,6 +21,10 @@
 			<input type="submit" name="logoutBtn" value="Logout">
 		</form>
 		
+		<form method="post" action="cos.php">
+			<input type="submit" name="cartBn" value="Coș">
+		</form>
+		
 		<?php
 		$file = fopen("../../res/produse.txt", "r");
 		$json = '';
@@ -34,9 +38,11 @@
 			echo '<td>'.$item["nume"].'</td>';
 			echo '<td>'.$item["producator"].'</td>';
 			echo '<td>'.$item["pret"].'</td>';
+			echo '<form method="post" action="api/modifica.php?id='.$item["id"].'">';
+			echo '<td><input type="submit" name="addProd" value="Adauga"></td>';
+			echo '</form>';
 			echo '</tr>';
 		}
 		echo '</table>';
-		session_destroy();
 	}
 ?>
