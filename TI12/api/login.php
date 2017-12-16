@@ -1,15 +1,30 @@
 <?php
 	session_start();
+	function test_input($data) {
+		$data = trim($data);
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return $data;
+	}
+	
 	$user = $_POST['utilizator'];
 	$pass = $_POST['parola'];
-	
-	if($user == "ana" && $pass == "1234"){
-		$_SESSION['utilizator'] = $user;
-		$_SESSION['eroare'] = "";
-		header('Location: http://localhost:5555/TI12/index.php');
+	test_input($user);
+	test_input($pass);
+	$file = fopen("../../../res/utilizatori.txt", "r");
+	if($file){
+		while(!feof($file)){
+			$line = test_input(fgets($file));
+			if($user."=".$pass === $line){
+				$_SESSION['utilizator'] = $user;
+				$_SESSION['eroare'] = "";
+				break;
+			}
+		}
+		fclose($file);
 	}
-	else{
+	if(!isset($_SESSION['utilizator'])){
 		$_SESSION['eroare'] = "Eroare!";
-		header('Location: http://localhost:5555/TI12/index.php');
 	}
+	header('Location: ../index.php');
 ?>
