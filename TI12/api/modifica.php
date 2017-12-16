@@ -6,10 +6,18 @@
 		$json.=fgets($file);
 	}
 	$jsonArr = json_decode($json,true);
-	
+	fclose($file);
+	$prodName = $jsonArr[$_GET['id']]["nume"];
 	if(empty($_SESSION['cos'])){
 		$_SESSION['cos'] = array();
+		array_push($_SESSION['cos'], $prodName);
 	}
-	array_push($_SESSION['cos'], $jsonArr[$_GET['id']]["nume"]);
-	header('Location: http://localhost:5555/TI12/index.php');
+	else{
+		$key = array_search($prodName, $_SESSION['cos']);
+		if($key === false)
+			array_push($_SESSION['cos'], $prodName);
+		else
+			unset($_SESSION['cos'][$key]);
+	}
+	header('Location: ../index.php');
 ?>
