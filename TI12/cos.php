@@ -18,5 +18,12 @@
 			}
 			echo '</table>';
 		}
+		
+		if(isset($_SESSION['cos'])){?>
+			<form method="post" action="api/golire.php">
+				<input type="submit" name="clearBtn" value="Golește coș">
+			</form>
+	<?php	
+		}
 	}
 ?>
