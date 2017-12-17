@@ -9,10 +9,12 @@
 	
 	$user = $_POST['utilizator'];
 	$pass = $_POST['parola'];
+	$validUser = preg_match('([a-zA-z0-9]{3,15})',$user);
+	$validPass = preg_match('([a-zA-z0-9]{6,15})',$pass);
 	test_input($user);
 	test_input($pass);
 	$file = fopen("../../../res/utilizatori.txt", "r");
-	if($file){
+	if($file && $validUSer == 1 && $validPass){
 		while(!feof($file)){
 			$line = test_input(fgets($file));
 			if($user."=".$pass === $line){
