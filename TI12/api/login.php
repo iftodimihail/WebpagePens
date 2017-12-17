@@ -14,7 +14,7 @@
 	test_input($user);
 	test_input($pass);
 	$file = fopen("../../../res/utilizatori.txt", "r");
-	if($file && $validUSer == 1 && $validPass){
+	if($file && $validUser === 1 && $validPass === 1){
 		while(!feof($file)){
 			$line = test_input(fgets($file));
 			if($user."=".$pass === $line){
