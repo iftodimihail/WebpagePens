@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Smart Trivia</title>
 	</head>
-	<body <?php if(!(isset($_SESSION['username']) || isset($_SESSION['error']))) echo "onload=loadDoc('api/login.php')";?>>
+	<body <?php if(!isset($_SESSION['username'])) echo "onload=loadDoc('api/login.php')";?>>
 		<section id="content">
 		<?php if(isset($_SESSION['username'])){
 			echo "Welcome, ".$_SESSION['username']."!";
@@ -17,13 +17,10 @@
 			<form action="api/logout.php">
 				<input type="submit" value="logout">
 			</form>
-		<?php 
-		}
-		else{
-			echo $_SESSION['error'];
-			$_SESSION['error']="";
+			<?php
 		}
 		?>
+		
 		</section>
 	<script src="js/myscript.js"></script>
 	</body>
