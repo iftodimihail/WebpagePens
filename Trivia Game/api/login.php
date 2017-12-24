@@ -16,11 +16,17 @@ function test_input($data) {
 	if(!(isset($_POST['username']) && isset($_POST['password']))){?>
 		<form method="POST" action="api/login.php"> 
 					Utilizator: <input pattern="[a-zA-z0-9]{3,15}" type="text" name="username" required>
-					Parola: <input pattern="[a-zA-z0-9]{6,15}" type="text" name="password" required>
+					Parola: <input pattern="[a-zA-z0-9]{6,15}" type="password" name="password" required>
 					<input type="submit" name="loginBtn" value="Login">
 					<button id="signUpBtn" onclick="loadDoc('api/signup.php')">Creează-ți cont</button>
 		</form>
-	<?php }
+	<?php
+		if(isset($_SESSION['error'])){
+			echo $_SESSION['error'];
+			$_SESSION['error']="";
+		}
+	}
+	
 	else{
 		$validUser = preg_match('([a-zA-z0-9]{3,15})',$username);
 		$validPass = preg_match('([a-zA-z0-9]{6,15})',$pass);
@@ -40,7 +46,7 @@ function test_input($data) {
 			}
 			switch($flag){
 				case 0: 
-					$_SESSION['error'] = "Numele de utilizator nu a fost găsit";
+					$_SESSION['error'] = "Numele de utilizator nu a fost găsit!";
 					header('Location: ../index.php');
 					break;
 				case 1: 
