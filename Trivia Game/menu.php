@@ -49,7 +49,7 @@
 		}
 		else
 		{
-			include $_GET['category'].".php";
+			include "categories/".$_GET['category'].".php";
 		}
 	}
 ?>
