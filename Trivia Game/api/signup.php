@@ -10,14 +10,14 @@
 		switch($x){
 			case 1:
 				echo '<form method="POST" action="api/signup.php">
-					Nume utilizator: <input pattern="[a-zA-z0-9]_{3,15}" type="text" name="user" required>
+					Nume utilizator: <input pattern="[a-zA-z0-9]{3,15}" type="text" name="user" required>
 					Parola: <input id="pass" pattern="[a-zA-z0-9]{6,15}" type="password" name="password" required>
 					Confirmă parola: <input id="passConf" pattern="[a-zA-z0-9]{6,15}" type="password" name="passwordConf" required>
 					<input type="submit" name="signUpBtn" value="Înregistrează-te">
 				</form>';
 				break;
 			case 2: echo '<form method="POST" action="signup.php">
-					Nume utilizator: <input pattern="[a-zA-z0-9]_{3,15}" type="text" name="user" required>
+					Nume utilizator: <input pattern="[a-zA-z0-9]{3,15}" type="text" name="user" required>
 					Parola: <input id="pass" pattern="[a-zA-z0-9]{6,15}" type="password" name="password" required>
 					Confirmă parola: <input id="passConf" pattern="[a-zA-z0-9]{6,15}" type="password" name="passwordConf" required>
 					<input type="submit" name="signUpBtn" value="Înregistrează-te">
@@ -70,6 +70,10 @@
 					formCase(2);
 					echo "Numele de utilizator deja există!";
 				}
+			}
+			else{
+				formCase(2);
+				echo "Why you do that?";
 			}
 		}
 	}
