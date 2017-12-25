@@ -13,13 +13,13 @@ function test_input($data) {
 	$validPass = preg_match('([a-zA-z0-9]{6,15})',$pass);
 	test_input($username);
 	test_input($pass);
-	if(!(isset($_POST['username']) && isset($_POST['password']))){?>
+	if(!isset($username) && !isset($pass)){?>
 		<form method="POST" action="api/login.php"> 
-					Utilizator: <input pattern="[a-zA-z0-9]{3,15}" type="text" name="username" required>
-					Parola: <input pattern="[a-zA-z0-9]{6,15}" type="password" name="password" required>
+					Utilizator: <input pattern="[a-zA-z0-9]{3,15}" type="text" name="username"  required>
+					Parola: <input pattern="[a-zA-z0-9]{6,15}" type="password" name="password"  required>
 					<input type="submit" name="loginBtn" value="Login">
-					<button id="signUpBtn" onclick="loadDoc('api/signup.php')">Creează-ți cont</button>
 		</form>
+				<button id="signUpBtn" onclick="loadDoc('api/signup.php')">Creează-ți cont</button>
 	<?php
 		if(isset($_SESSION['error'])){
 			echo $_SESSION['error'];
@@ -27,7 +27,7 @@ function test_input($data) {
 		}
 	}
 	
-	else{
+	elseif($username != ""){
 		$validUser = preg_match('([a-zA-z0-9]{3,15})',$username);
 		$validPass = preg_match('([a-zA-z0-9]{6,15})',$pass);
 		$json = file_get_contents('../res/utilizatori.json');
@@ -52,7 +52,7 @@ function test_input($data) {
 				case 1: 
 					$_SESSION['username'] = $username;
 					$_SESSION['error'] = "";
-					header('Location: ../index.php');
+					header('Location: ../menu.php');
 					break;
 				case 2:
 					$_SESSION['error'] = "Parolă incorectă!";
