@@ -9,14 +9,14 @@
 	function formCase($x){
 		switch($x){
 			case 1:
-				echo '<form method="POST" action="api/signup.php">
+				echo '<form method="POST" action="api/signup">
 					Nume utilizator: <input pattern="[a-zA-z0-9]{3,15}" type="text" name="user" required>
 					Parola: <input id="pass" pattern="[a-zA-z0-9]{6,15}" type="password" name="password" required>
 					Confirmă parola: <input id="passConf" pattern="[a-zA-z0-9]{6,15}" type="password" name="passwordConf" required>
 					<input type="submit" name="signUpBtn" value="Înregistrează-te">
 				</form>';
 				break;
-			case 2: echo '<form method="POST" action="signup.php">
+			case 2: echo '<form method="POST" action="signup">
 					Nume utilizator: <input pattern="[a-zA-z0-9]{3,15}" type="text" name="user" required>
 					Parola: <input id="pass" pattern="[a-zA-z0-9]{6,15}" type="password" name="password" required>
 					Confirmă parola: <input id="passConf" pattern="[a-zA-z0-9]{6,15}" type="password" name="passwordConf" required>
@@ -64,7 +64,7 @@
 						fwrite($file, $json);
 						fclose($file);
 					}
-						header('Location: ../index.php');
+						header('Location: ../index');
 				}
 				else{
 					formCase(2);
