@@ -1,6 +1,6 @@
 <?
-session_start();
-function test_input($data) {
+	session_start();
+	function test_input($data) {
 		$data = trim($data);
 		$data = stripslashes($data);
 		$data = htmlspecialchars($data);
@@ -15,8 +15,8 @@ function test_input($data) {
 	test_input($pass);
 	if(!isset($username) && !isset($pass)){?>
 		<form method="POST" action="api/login.php"> 
-					Utilizator: <input pattern="[a-zA-z0-9]{3,15}" type="text" name="username"  required>
-					Parola: <input pattern="[a-zA-z0-9]{6,15}" type="password" name="password"  required>
+					Utilizator: <input pattern="[a-zA-z0-9]{3,15}" type="text" name="username" required>
+					Parola: <input pattern="[a-zA-z0-9]{6,15}" type="password" name="password" required>
 					<input type="submit" name="loginBtn" value="Login">
 		</form>
 				<button id="signUpBtn" onclick="loadDoc('api/signup.php')">Creează-ți cont</button>
@@ -47,17 +47,18 @@ function test_input($data) {
 			switch($flag){
 				case 0: 
 					$_SESSION['error'] = "Numele de utilizator nu a fost găsit!";
-					header('Location: ../index.php');
+					header('Location: ../index');
 					break;
 				case 1: 
 					$_SESSION['username'] = $username;
 					$_SESSION['error'] = "";
-					header('Location: ../menu.php');
+					header('Location: ../menu');
 					break;
 				case 2:
 					$_SESSION['error'] = "Parolă incorectă!";
-					header('Location: ../index.php');
+					header('Location: ../index');
 					break;
 			}
 		}
 	}
+?>
