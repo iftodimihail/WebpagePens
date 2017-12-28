@@ -1,5 +1,8 @@
 <?php
 	session_start();
+	if(isset($_SESSION['username'])){
+		header('Location: menu');
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,7 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<title>Smart Trivia</title>
 	</head>
-	<body <?php if(!isset($_SESSION['username'])) echo "onload=loadDoc('api/login.php')";?>>
+	<body onload="loadDoc('api/login.php')">
 		<main id="content">
 			
 		</main>
