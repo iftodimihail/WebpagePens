@@ -56,7 +56,7 @@
 				else
 				{	
 					?> 
-					<a href=<?php echo "menu"; ?>><img src="images/home.png"></a>
+					<a href="menu"><img src="images/home.png"></a>
 					<?php
 					include "categories/computers.php";
 				}
