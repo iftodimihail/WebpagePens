@@ -32,21 +32,21 @@
 							<div class="category1" id="computer"> <a href="?category=computers">
 								<h2>Computers</h2>
 							</a></div>
-							<div class="category1" id="geography"><a href="?category=geography">
+							<div class="category1" id="geography"><a href="?category=geografie">
 								<h2>Geografie</h2>
 							</a></div>
-							<div class="category1" id="history"><a href="?category=history">
+							<div class="category1" id="history"><a href="?category=istorie">
 								<h2>Istorie</h2>
 							</a></div>
 						</div>
 						<div class="row2">
-							<div class="category2" id="music"><a href="?category=music">
+							<div class="category2" id="music"><a href="?category=muzică">
 								<h2>Muzică</h2>
 							</a></div>
-							<div class="category2" id="movie"><a href="?category=movie">
+							<div class="category2" id="movie"><a href="?category=film">
 								<h2>Film</h2>
 							</a></div>
-							<div class="category2" id="science"><a href="?category=science">
+							<div class="category2" id="science"><a href="?category=știință">
 								<h2>Știință</h2>
 							</a></div>
 						</div>
@@ -56,7 +56,7 @@
 				else
 				{	
 					?> 
-					<a href="menu"><img src="images/home.png"></a>
+					<a href="menu"><img src="images/home.png" style="width: 3vw; height:4vh;"></a>
 					<?php
 					include "categories/computers.php";
 				}
