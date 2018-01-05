@@ -9,25 +9,33 @@
 	
 	$username = $_POST['username'];
 	$pass = $_POST['password'];
-	$validUser = preg_match('([a-zA-z0-9]{3,15})',$user);
-	$validPass = preg_match('([a-zA-z0-9]{6,15})',$pass);
 	test_input($username);
 	test_input($pass);
-	if(!isset($username) && !isset($pass)){?>
-		<form method="POST" action="api/login.php"> 
-					Utilizator: <input pattern="[a-zA-z0-9]{3,15}" type="text" name="username" required>
-					Parola: <input pattern="[a-zA-z0-9]{6,15}" type="password" name="password" required>
-					<input type="submit" name="loginBtn" value="Login">
-		</form>
-				<button id="signUpBtn" onclick="loadDoc('api/signup.php')">Creează-ți cont</button>
-	<?php
-		if(isset($_SESSION['error'])){
-			echo $_SESSION['error'];
-			$_SESSION['error']="";
-		}
-	}
 	
-	elseif($username != ""){
+	if(!isset($username) && !isset($pass)){?>
+		<div class="formContainer">
+			<form method="POST" action="api/login"> 
+					<input id="user" pattern="[a-zA-z0-9]{3,15}" type="text" name="username" required autofocus placeholder="Nume utilizator">
+					<input id="pass" pattern="[a-zA-z0-9]{6,15}" type="password" name="password" required placeholder="Parola">
+					<input id="login" type="submit" name="loginBtn" value="Login">
+			</form>
+			<?php
+			if(isset($_SESSION['error'])){
+				echo $_SESSION['error'];
+				$_SESSION['error']="";
+			}
+			if(isset($_SESSION['succes'])){
+				echo $_SESSION['succes'];
+				$_SESSION['succes']="";
+			}
+			?>	
+				<form method="POST" action="api/signup">
+					<input type="submit" id="signUpBtn" name="signUpBtn" value="Creează-ți cont"><br>
+				</form>
+		</div>
+<?php		
+	}
+	else{
 		$validUser = preg_match('([a-zA-z0-9]{3,15})',$username);
 		$validPass = preg_match('([a-zA-z0-9]{6,15})',$pass);
 		$json = file_get_contents('../res/utilizatori.json');
