@@ -1,10 +1,72 @@
-#content{
-
+html, body{
+	margin: 0;
+	padding: 0;
+	height: 100%;	
+	background-color:#8caeff;
 }
 
+.formContainer{
+	width: 300px;
+    height: 290px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	border: 1px solid #939393;
+    margin: auto;
+	text-align: center;
+	background-color: #e8efff;
+}
+
+.formContainer form{
+	margin-top: 30px;
+}
+
+.formContainer input{
+	height: 30px;
+	width: 250px;
+	margin-top: 10px;
+	font-family: Roboto, serif;
+	font-size: 14px;
+}
+
+#login{
+	height: 33px;
+	background-color: rgb(66,139,202);
+	border: 1px solid rgb(66,139,202);
+	border-radius: 3px;
+	color: white;
+	margin-bottom: 10px;
+	font-family: Roboto, serif;
+	font-size: 14px;
+	margin-top: 5px;
+}
+
+#signUpBtn{
+	margin-top: 40px;
+	height: 33px;
+	width : 250px;
+	background-color: rgb(66,139,202);
+	border: 1px solid rgb(66,139,202);
+	border-radius: 3px;
+	font-family: Roboto, serif;
+	font-size: 14px;
+	color: white;
+}
+
+#signup{
+	height: 33px;
+	background-color: rgb(66,139,202);
+	border: 1px solid rgb(66,139,202);
+	border-radius: 3px;
+	color: white;
+}
+
+
 .categories{
-	width: 70vw;
-	height: 100%;
+	width: 72.5%;
+	height: 50vh;
 	border: 1px solid;
 	overflow: auto;
 }
@@ -13,54 +75,52 @@
 	float: left;
 	text-decoration: none;
 	width: 23vw;
-	height: 14.7vh;
+	height: 15vh;
 	border: 1px solid;
 }
 
 .row1{
-	border: 1px solid red;
 	overflow: auto;
+	height: 150px;
 }
 
 .row1 .category1{
 	float: left;
-	width: 33.1%;
+	width: 23vw;
 	height: 15vh;
 	text-align:center;
-	border: 1px solid;
+	margin: 7px 7px 7px 7px;
 }
 
 .row1 #history{
 	float: right;
-	width: 33.1%;
+	width: 23vw;
 	height: 15vh;
 	text-align:center;
-	border: 1px solid green;
-	
+	margin-left: 0 !important;
 }
 
 .row2{
-	border: 1px solid;
 	overflow: auto;
+	height: 150px;
 }
 .row2 .category2{
 	float: left;
-	width: 33.1%;
+	width: 23vw;
 	height: 15vh;
 	text-align:center;
-	border: 1px solid;
+	margin: 7px 7px 7px 7px;
 }
 
 .row2 #science{
 	float: right;
-	width: 33.1%;
+	width: 23vw;
 	height: 15vh;
 	text-align:center;
-	border: 1px solid green;
-	
+	margin-left: 0 !important;
 }
 
 .row2{
-	border: 1px solid;
 	overflow: auto;
+	height: 150px;
 }
