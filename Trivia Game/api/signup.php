@@ -1,38 +1,18 @@
 <?php
+	session_start();
+	
 	function test_input($data) {
 		$data = trim($data);
 		$data = stripslashes($data);
 		$data = htmlspecialchars($data);
 		return $data;
 	} 
-	
-	function formCase($x){
-		switch($x){
-			case 1:
-				echo '<form method="POST" action="api/signup">
-					Nume utilizator: <input pattern="[a-zA-z0-9]{3,15}" type="text" name="user" required>
-					Parola: <input id="pass" pattern="[a-zA-z0-9]{6,15}" type="password" name="password" required>
-					Confirmă parola: <input id="passConf" pattern="[a-zA-z0-9]{6,15}" type="password" name="passwordConf" required>
-					<input type="submit" name="signUpBtn" value="Înregistrează-te">
-				</form>';
-				break;
-			case 2: echo '<form method="POST" action="signup">
-					Nume utilizator: <input pattern="[a-zA-z0-9]{3,15}" type="text" name="user" required>
-					Parola: <input id="pass" pattern="[a-zA-z0-9]{6,15}" type="password" name="password" required>
-					Confirmă parola: <input id="passConf" pattern="[a-zA-z0-9]{6,15}" type="password" name="passwordConf" required>
-					<input type="submit" name="signUpBtn" value="Înregistrează-te">
-				</form>';
-				break;
-		}
-	}
-			
-	if(!isset($_POST['user']) && !isset($_POST['password']) && !isset($_POST['passwordConf'])){
-		formCase(1);
-	}	
-	else{
+		
+	if(isset($_POST['user']) && isset($_POST['password']) && isset($_POST['passwordConf'])){
 		if($_POST['password'] !== $_POST['passwordConf']){
-			formCase(2);
-			echo "Parolele introduse nu se potrivesc!";
+			unset($_POST['user'],$_POST['password']);
+			$_SESSION['error']="Parolele introduse nu se potrivesc!";
+			header('Location: signup');
 		}
 		else{			
 			$user = $_POST['user'];
@@ -64,17 +44,53 @@
 						fwrite($file, $json);
 						fclose($file);
 					}
+						$_SESSION['succes']="Cont înregistrat!";
 						header('Location: ../index');
 				}
 				else{
-					formCase(2);
-					echo "Numele de utilizator deja există!";
+					unset($_POST['user'],$_POST['password']);
+					$_SESSION['error']="Numele de utilizator deja există!";
+					header('Location: signup');
 				}
 			}
 			else{
-				formCase(2);
-				echo "Why you do that?";
+				unset($_POST['user'],$_POST['password']);
+				$_SESSION['error']="Why you do that?";
+				header('Location: signup');
 			}
+		}
+	}
+	else{
+		?>
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="x-ua-compatible" content="ie=edge"> <!-- † -->
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+			<link rel="stylesheet" type="text/css" href="../css/style.css">
+			<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+			<title>Smart Trivia</title>
+		</head>
+		<body>
+			<div class="formContainer">	
+				<form method="POST" action="signup">
+					<input id="user" pattern="[a-zA-z0-9]{3,15}" type="text" name="user" required autofocus placeholder="Nume utilizator">
+					<input id="pass" pattern="[a-zA-z0-9]{6,15}" type="password" name="password" required placeholder="Parola">
+					<input id="passConf" pattern="[a-zA-z0-9]{6,15}" type="password" name="passwordConf" required placeholder="Confirmă parola">
+					<input id="signup" type="submit" name="signUpBtn" value="Înregistrează-te">
+				</form>
+					<form method="POST" action="../index">
+						<input type="submit" id="login" name="loginBtn" value="Conectează-te">
+					</form>
+			</div>
+			<script src="../js/myscript.js"></script>
+		</body>
+		</html>
+<?php
+		if(isset($_SESSION['error'])){
+			echo $_SESSION['error'];
+			$_SESSION['error'] = "";
 		}
 	}
 ?>
