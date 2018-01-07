@@ -11,9 +11,11 @@
 		<meta http-equiv="x-ua-compatible" content="ie=edge"> <!-- † -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link href="images/favicon.ico" rel="icon" type="image/x-icon">
 		<title>Smart Trivia</title>
 	</head>
-	<body onload="loadDoc('api/login.php')">
+	<body onload="loadDoc('api/login')">
 		<main id="content">
 			
 		</main>
