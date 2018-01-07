@@ -1,13 +1,18 @@
 html, body{
-	margin: 0;
-	padding: 0;
 	height: 100%;	
-	background-color:#8caeff;
 }
+
+body{
+	text-align: center;
+	margin: 0px; 
+	padding: 0px;
+	background:rgba(73, 133, 237, 0.75);
+}
+/* -- Login and Signup style -- */
 
 .formContainer{
 	width: 300px;
-    height: 290px;
+    height: 305px;
     position: absolute;
     top:0;
     bottom: 0;
@@ -19,10 +24,13 @@ html, body{
 	background-color: #e8efff;
 }
 
-.formContainer form{
-	margin-top: 30px;
+.formContainer #loginForm{
+	margin-top: 40px;
 }
 
+#signupForm{
+	margin-top: 30px;
+}
 .formContainer input{
 	height: 30px;
 	width: 250px;
@@ -37,14 +45,13 @@ html, body{
 	border: 1px solid rgb(66,139,202);
 	border-radius: 3px;
 	color: white;
-	margin-bottom: 10px;
 	font-family: Roboto, serif;
 	font-size: 14px;
-	margin-top: 5px;
+	margin-top: 10px;
 }
 
 #signUpBtn{
-	margin-top: 40px;
+	/*margin-top: 40px;*/
 	height: 33px;
 	width : 250px;
 	background-color: rgb(66,139,202);
@@ -63,64 +70,201 @@ html, body{
 	color: white;
 }
 
+.tooltip .tooltiptext{
+	visibility: hidden;
+	width: 250px;
+    background-color: rgb(150,150,150);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+	font-family:Roboto, serif;
+	font-size:14px;
 
-.categories{
-	width: 72.5%;
-	height: 50vh;
-	border: 1px solid;
-	overflow: auto;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+	top: 5px;
+    right: 26px; 
+}
+.tooltip:hover .tooltiptext{
+    visibility: visible;
 }
 
+/* -- Menu style -- */
+.home{
+	width: 100%;
+	text-align: center;
+}
+#logoutdiv{
+	float:right;
+	margin: 2px 3px 0 0;
+}
+.categories{
+	top: 15px;
+    margin:auto;
+    width: 850px;
+    left: -15px;
+    height: 400px;
+	position: relative;
+}
+.categories h2{
+	margin-bottom:0;
+	margin-top:5px;
+}
 .categories a{
 	float: left;
-	text-decoration: none;
-	width: 23vw;
-	height: 15vh;
+	text-decoration:none;
+	width: 250px;
+	height: 150px;
+	border: 1px solid black;
+	border-radius:4px;
+	color: black;
+}
+
+.categories a:hover{
+	background:rgba(255, 255, 255, 0.45);
+	box-shadow: 3px 3px 4px;
+}
+
+#computers{
+	position: absolute;
+    left: 25px;
+    top: 33px;
+	margin:auto;
+}
+
+#geography{
+	position: absolute;
+    left: 300px;
+    top: 33px;
+	margin:auto;
+}
+
+#history{
+	position: absolute;
+    left: 575px;
+    top: 33px;
+	margin:auto;
+}
+#music{
+	position: absolute;
+    left: 25px;
+    top: 216px;
+	margin:auto;
+}
+#movie{
+	position: absolute;
+    left: 300px;
+    top: 216px;
+	margin:auto;
+}
+#science{
+	position: absolute;
+    left: 575px;
+    top: 216px;
+	margin:auto;
+}
+
+/* -- Quiz style -- */
+
+#homeBtn{
+	position:absolute;
+	z-index:4;
+	left: 0;
+	top: 1px;
+}
+
+h1{
+	margin: 0 0 14px 0;
+	font-size: 40px;
+}
+
+.quizContainer{
+	width: 850px;
+	height: 230px;
+	left: 18.6%;
 	border: 1px solid;
+	position:absolute;
+	border-radius: 15px;
+	padding-top: 100px;
+	background-color: #a9c3f2;
+	box-shadow:5px 10px 30px;
 }
 
-.row1{
-	overflow: auto;
-	height: 150px;
+#quiz{
+	margin-top:15px;
 }
 
-.row1 .category1{
-	float: left;
-	width: 23vw;
-	height: 15vh;
-	text-align:center;
-	margin: 7px 7px 7px 7px;
+#question{
+	width: 750px;
+	height:35px;
+	font-size:30px;
+	position: absolute;
+	top: 9%;
+	left: 6%;
+	padding: 10px 0 10px 0;	
+}
+.option{
+	border: 1px solid;
+	width: 400px;
+	height: 20px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 7px 2px 7px 2px;
+	text-align: left;
+	border-radius: 7px;
+	padding: 10px 0 10px 0;
+	background: rgba(255,255,255, 0.5);
 }
 
-.row1 #history{
+span{
+	position:absolute;
+	font-size:18px;
+}
+.option:hover{
+	background: rgba(255,255,255, 0.86);
+}
+
+input[type='radio']:after{
+	width: 10px;
+    height: 10px;
+    border-radius: 15px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid white;
+}
+
+ input[type='radio']:checked:after {
+    width: 10px;
+    height: 10px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #fab536;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+#nextBtn{
+	width: 150px;
+	height: 35px;
 	float: right;
-	width: 23vw;
-	height: 15vh;
-	text-align:center;
-	margin-left: 0 !important;
+	margin: 30px 20px 0 0;
+	background-color: #5f8ddd;
+	border: 1px solid #5f8ddd;
+	border-radius: 4px;
+	box-shadow:1px 1px 1px;
+	font-family:Roboto, serif;
+	font-size:14px;
 }
 
-.row2{
-	overflow: auto;
-	height: 150px;
-}
-.row2 .category2{
-	float: left;
-	width: 23vw;
-	height: 15vh;
-	text-align:center;
-	margin: 7px 7px 7px 7px;
-}
-
-.row2 #science{
-	float: right;
-	width: 23vw;
-	height: 15vh;
-	text-align:center;
-	margin-left: 0 !important;
-}
-
-.row2{
-	overflow: auto;
-	height: 150px;
+#result{
+	font-size: 50px;
 }
