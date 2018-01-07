@@ -74,9 +74,15 @@
 		</head>
 		<body>
 			<div class="formContainer">	
-				<form method="POST" action="signup">
-					<input id="user" pattern="[a-zA-z0-9]{3,15}" type="text" name="user" required autofocus placeholder="Nume utilizator">
-					<input id="pass" pattern="[a-zA-z0-9]{6,15}" type="password" name="password" required placeholder="Parola">
+				<form id="signupForm" method="POST" action="signup">
+					<div class="tooltip">
+						<input id="user" pattern="[a-zA-z0-9]{3,15}" type="text" name="user" required autofocus placeholder="Nume utilizator">
+						<span class="tooltiptext">Între 3 și 15 caractere(litere și cifre)</span>
+					</div>
+					<div class="tooltip">
+						<input id="pass" pattern="[a-zA-z0-9]{6,15}" type="password" name="password" required placeholder="Parola">
+						<span class="tooltiptext">Între 6 și 15 caractere(litere și cifre)</span>
+					</div>
 					<input id="passConf" pattern="[a-zA-z0-9]{6,15}" type="password" name="passwordConf" required placeholder="Confirmă parola">
 					<input id="signup" type="submit" name="signUpBtn" value="Înregistrează-te">
 				</form>
@@ -84,9 +90,9 @@
 						<input type="submit" id="login" name="loginBtn" value="Conectează-te">
 					</form>
 			</div>
-			<script src="../js/myscript.js"></script>
-		</body>
-		</html>
+		<script src="../js/myscript.js"></script>
+	</body>
+</html>
 <?php
 		if(isset($_SESSION['error'])){
 			echo $_SESSION['error'];
