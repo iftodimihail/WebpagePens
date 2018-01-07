@@ -7,6 +7,7 @@ var opt2 = document.getElementById("choice2");
 var opt3 = document.getElementById("choice3");
 var opt4 = document.getElementById("choice4");
 var nextBtn = document.getElementById("nextBtn");
+var tryAgain = document.getElementById("again");
 var currentQuestion = 0;
 var score = 0;
 var totalQuests = questions.computers.length;
@@ -18,13 +19,13 @@ function loadQuestion(questionIndex){
 			break;
 		case "geografie": quest = questions.geografie[questionIndex];
 			break;
-		case "muzica": quest = questions.muzica[questionIndex];
+		case "muzică": quest = questions.muzică[questionIndex];
 			break;
 		case "film": quest = questions.film[questionIndex];
 			break;
 		case "istorie": quest = questions.istorie[questionIndex];
 			break;
-		case "stiinta": quest = questions.stiinta[questionIndex];
+		case "știință": quest = questions.știință[questionIndex];
 			break;
 	}
 	// returns the question at questionIndex from myquestions.js file
@@ -53,8 +54,8 @@ function loadNextQuestion(){
 		case "geografie": 
 				correct = questions.geografie[currentQuestion].correct;
 				break;
-		case "muzica": 
-				correct = questions.muzica[currentQuestion].correct;
+		case "muzică": 
+				correct = questions.muzică[currentQuestion].correct;
 				break;
 		case "film": 
 				correct = questions.film[currentQuestion].correct;
@@ -62,8 +63,8 @@ function loadNextQuestion(){
 		case "istorie": 
 				correct = questions.istorie[currentQuestion].correct;
 				break;
-		case "siinta": 
-				correct = questions.siinta[currentQuestion].correct;
+		case "știință": 
+				correct = questions.știință[currentQuestion].correct;
 				break;
 	}
 	
@@ -79,6 +80,12 @@ function loadNextQuestion(){
 		quizContainer.style.display = "none";
 		resContainer.style.display = '';
 		resContainer.textContent = "Scor: "+score;
+		tryAgain.style.display='';
+		/*var scoreElem = document.createElement("input");
+		scoreElem.setAttribute("type", "hidden");
+		scoreElem.setAttribute("value", score);
+		scoreElem.setAttribute("name", "score");
+		document.getElementById("result").appendChild(scoreElem);*/
 		return;
 	}
 	loadQuestion(currentQuestion);
