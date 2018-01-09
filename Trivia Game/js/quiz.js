@@ -37,16 +37,21 @@ function loadQuestion(questionIndex){
 
 };
 
-function loadNextQuestion(){
+function isSelected(){
 	var selectedOpt = document.querySelector("input[type=radio]:checked");
 	if(!selectedOpt){
 		alert("Selectează o opțiune!");
-		return;
+		return false;
 	}
-	
+	else return true;
+}
+
+
+function isCorrect(){
+	var selectedOpt = document.querySelector("input[type=radio]:checked");
 	var answer = selectedOpt.value;
 	var correct = "";
-	
+		
 	switch(categoryElem.value){
 		case "computers": 	
 				correct = questions.computers[currentQuestion].correct;
@@ -67,11 +72,29 @@ function loadNextQuestion(){
 				correct = questions.știință[currentQuestion].correct;
 				break;
 	}
-	
+		
 	if(correct === answer){
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+function loadNextQuestion(){
+	var selectedOpt = document.querySelector("input[type=radio]:checked");
+	// reset colors of previous answers 
+	var prevC = document.getElementsByClassName("correct")[0];
+	var prevW = document.getElementsByClassName("wrong")[0];
+	if(prevC)
+		prevC.className = "option";
+	if(prevW)
+		prevW.className = "option";
+	
+	if(isCorrect()){
 		score++;
 	}
-	selectedOpt.checked = false;
+	
 	currentQuestion++;
 	if(currentQuestion == totalQuests - 1){
 		nextBtn.textContent = "Finish";
@@ -88,7 +111,28 @@ function loadNextQuestion(){
 		document.getElementById("result").appendChild(scoreElem);*/
 		return;
 	}
+	selectedOpt.checked = false;
 	loadQuestion(currentQuestion);
 }
 
+function changeColor(){
+	if(isSelected()){
+		var x = document.querySelector("input[type=radio]:checked").value;
+		if(isCorrect()){
+			document.getElementById(x).className = "correct";
+		}
+		else{ 
+			document.getElementById(x).className = "wrong";
+		}
+	}
+	else return false;
+}
+
+function nextQuestion(){
+	if(isSelected()){
+		changeColor();
+		setTimeout(loadNextQuestion, 1100);
+	}
+}
+	
 loadQuestion(currentQuestion)
