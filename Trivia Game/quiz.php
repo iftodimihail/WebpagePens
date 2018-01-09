@@ -13,7 +13,7 @@
 			<label class="option"><input type="radio" name="button" id="btn2" value="2"><span id="choice2"></span></label>
 			<label class="option"><input type="radio" name="button" id="btn3" value="3"><span id="choice3"></span></label>
 			<label class="option"><input type="radio" name="button" id="btn4" value="4"><span id="choice4"></span></label>
-			<button id="nextBtn" onclick="loadNextQuestion()">Următoarea întrebare</button>
+			<button id="nextBtn" onclick="nextQuestion()">Următoarea întrebare</button>
 	</div>
 	<div id="result" style="display:none;"></div>
 	<a id="again" style="display:none;" href=<?php echo '"?category='.$_GET['category'].'"';?>><img src="images/tryagain.png"></a>
